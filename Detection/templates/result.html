@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center " style="height: 70%;">
+    <div class="card shadow-3" style="width: 70%; height: 70%;">
+        <div class="card-body text-center d-flex flex-column justify-content-center align-items-center h-100">
+            <h2 class="">Processed Video</h2>
+            <div class="ratio ratio-16x9 mb-2" style="width: 100%;">
+                <video class="video-fluid z-depth-1" controls>
+                    <source src="{{ video.processed_video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <a href="{% url 'upload_video' %}" class="btn btn-outline-secondary btn-rounded">Upload Another Video</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

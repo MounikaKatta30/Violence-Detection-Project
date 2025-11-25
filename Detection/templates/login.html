@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5 glass-effect">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Login</h3>
+                    <div class="form-group mt-3">
+                        {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <div class="alert {{ message.tags }}"> {{ message }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group mt-3">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to bottom, #3498db, #1abc9c);
+        /* Change these colors as needed */
+        height: 100vh;
+    }
+
+    .glass-effect {
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+    }
+</style>
+{% endblock %}

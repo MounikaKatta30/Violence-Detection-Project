@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<style>
+    body {
+        background: linear-gradient(to bottom, #2c3e50, #16a085);
+        height: 100vh;
+    }
+
+    .glass-effect {
+        background-color: rgba(255, 255, 255, 0.824);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 20px;
+        color: #000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .glass-effect:hover {
+        transform: translateY(-5px);
+    }
+
+    .icon {
+        font-size: 2rem;
+        margin-right: 10px;
+        color: #16a085;
+    }
+
+    .scrollable-section {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+</style>
+
+<div class="container my-5">
+    <h1 class="text-center text-white" data-mdb-animation="fade-in">
+        Welcome to the Violence Detection Website
+    </h1>
+
+    <!-- Introduction Card with Icon -->
+    <div class="card mt-5 animated fadeIn glass-effect" data-mdb-animation="slide-in-left">
+        <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-video icon"></i> Violence Detection Using Machine Learning</h5>
+            <p class="card-text">
+                The Violence Detection website leverages advanced machine learning models to identify violent content in
+                uploaded video files. This tool helps enhance safety measures across various sectors, including public
+                security, education, and digital content moderation. By using state-of-the-art models such as YOLO and
+                ResNet, the platform analyzes videos for violent scenes and provides real-time results, aiding in
+                preventive security measures.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Features Card with Scrollable Content -->
+    <div class="card mt-4 animated fadeIn glass-effect" data-mdb-animation="slide-in-right">
+        <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-star icon"></i> Main Features</h5>
+            <div class="scrollable-section">
+                <ul>
+                    <li><i class="fas fa-check-circle text-success"></i> User-friendly interface for uploading video
+                        files</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Real-time detection of violent content</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Powered by advanced machine learning models
+                        (YOLO, ResNet)</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Detailed analysis and reports for informed
+                        decision-making</li>
+                    <li><i class="fas fa-check-circle text-success"></i> High processing speed with efficient algorithms
+                    </li>
+                    <li><i class="fas fa-check-circle text-success"></i> Customizable settings for various security
+                        needs</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Secure handling and storage of uploaded videos
+                    </li>
+                    <li><i class="fas fa-check-circle text-success"></i> Easy integration with existing security
+                        infrastructure</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Card with Animated Icons -->
+    <div class="card mt-4 animated fadeIn glass-effect" data-mdb-animation="zoom-in">
+        <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-thumbs-up icon"></i> Benefits</h5>
+            <p class="card-text">
+                Using our Violence Detection system provides numerous benefits:
+            </p>
+            <div class="d-flex align-items-start mb-2">
+                <i class="fas fa-shield-alt icon"></i>
+                <p class="mb-0">Enhanced safety measures for public spaces and institutions</p>
+            </div>
+            <div class="d-flex align-items-start mb-2">
+                <i class="fas fa-chart-line icon"></i>
+                <p class="mb-0">Data-driven insights for effective security planning</p>
+            </div>
+            <div class="d-flex align-items-start mb-2">
+                <i class="fas fa-user-shield icon"></i>
+                <p class="mb-0">Protection of digital content and compliance with regulations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion Card -->
+    <div class="card mt-4 animated fadeIn glass-effect" data-mdb-animation="slide-in-up">
+        <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-handshake icon"></i> Conclusion</h5>
+            <p class="card-text">
+                The Violence Detection website is a crucial tool for modern security strategies, offering an automated
+                solution for screening violent content in videos. By utilizing cutting-edge machine learning techniques,
+                this platform provides a robust mechanism to assist in law enforcement, school safety, and digital
+                content moderation. The user-friendly interface ensures that anyone can easily upload videos and receive
+                immediate analysis, making environments safer and more secure.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to add the 'animate__animated' class when elements scroll into view
+    document.addEventListener('DOMContentLoaded', function () {
+        const animatedElements = document.querySelectorAll('[data-animate-on-scroll]');
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            animatedElements.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('animate__animated', el.dataset.animation);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Trigger animation check on load
+    });
+</script>
+
+
+{% endblock %}

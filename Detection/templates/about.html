@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="mb-4" data-mdb-animation="fade-in">About Our Project</h1>
+        <p class="lead mb-5" data-mdb-animation="slide-in-up">
+            Welcome to our Violence Detection System! Our project utilizes advanced video processing and machine
+            learning to detect and label violent scenes in videos. We aim to bring innovative technology solutions for
+            real-world challenges.
+        </p>
+    </div>
+
+    <!-- Mission, Vision, and Technology Cards -->
+    <div class="row g-4">
+        <div class="col-md-4" data-mdb-animation="zoom-in">
+            <div class="card shadow-3">
+                <div class="card-body text-center">
+                    <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Our Mission</h5>
+                    <p class="card-text">
+                        To provide an efficient and reliable tool that ensures safety and security by identifying
+                        potential threats in video footage.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" data-mdb-animation="zoom-in" data-mdb-animation-delay="200">
+            <div class="card shadow-3">
+                <div class="card-body text-center">
+                    <i class="fas fa-eye fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Our Vision</h5>
+                    <p class="card-text">
+                        Creating a safer environment through cutting-edge technology, making violence detection
+                        accessible and effective.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" data-mdb-animation="zoom-in" data-mdb-animation-delay="400">
+            <div class="card shadow-3">
+                <div class="card-body text-center">
+                    <i class="fas fa-microchip fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title">Technology</h5>
+                    <p class="card-text">
+                        Leveraging deep learning and computer vision, our system analyzes video frames in real-time and
+                        applies advanced techniques for high accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrollable Features Section -->
+    <div class="mt-5">
+        <h2 class="text-center mb-4" data-mdb-animation="fade-in">Key Features</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="scrollable-section" style="max-height: 400px; overflow-y: scroll;"
+                    data-mdb-animation="slide-in-right">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <i class="fas fa-shield-alt text-primary"></i> Real-Time Violence Detection
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-cogs text-danger"></i> Advanced Augmentation Techniques
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-cloud text-info"></i> Cloud-Based Processing
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-user-shield text-success"></i> Secure Data Handling
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-chart-line text-warning"></i> Continuous Learning and Improvement
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-user-friends text-secondary"></i> User-Friendly Interface
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-5 text-center" data-mdb-animation="fade-in">
+        <a href="{% url 'upload_video' %}" class="btn btn-primary btn-rounded">Try It Out</a>
+    </div>
+</div>
+
+<!-- Include MDBootstrap Animation Initialization -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize MDBootstrap animations
+        mdb.Animation.init();
+    });
+</script>
+
+{% endblock %}
